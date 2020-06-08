@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:restoappdemo/src/signup.dart';
+import 'file:///C:/Users/isgod/AndroidStudioProjects/resto_app_demo/resto_app_demo/lib/src/pages/signup.dart';
 
 import 'loginPage.dart';
 
