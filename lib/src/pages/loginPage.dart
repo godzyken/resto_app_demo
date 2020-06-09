@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:restoappdemo/src/services/signup_google.dart';
@@ -120,54 +121,39 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Widget _facebookButton() {
-    return Container(
-      height: 50,
-      margin: EdgeInsets.symmetric(vertical: 20),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(10)),
-      ),
-      child: Row(
-        children: <Widget>[
-          Expanded(
-            flex: 1,
-            child: Container(
-              decoration: BoxDecoration(
-                color: Color(0xff1959a9),
-                borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(5),
-                    topLeft: Radius.circular(5)),
-              ),
-              alignment: Alignment.center,
-              child: Text('f',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 25,
-                      fontWeight: FontWeight.w400)),
+    return OutlineButton(
+      splashColor: Color(0xff1959a9),
+      onPressed: () {
+        signInWithFacebook().whenComplete(() => {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) {
+                return MyHomePage();
+              }
+            )
+          )
+        });
+      },
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+      highlightElevation: 0,
+      borderSide: BorderSide(color: Color(0xff1959a9)),
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Image(
+              image: AssetImage('assets/logos/facebook_logo.png'),
+              height: 40.0,
             ),
-          ),
-          Expanded(
-            flex: 5,
-            child: Container(
-              decoration: BoxDecoration(
-                color: Color(0xff2872ba),
-                borderRadius: BorderRadius.only(
-                    bottomRight: Radius.circular(5),
-                    topRight: Radius.circular(5)),
-              ),
-              alignment: Alignment.center,
-              child: Text('Log in with Facebook',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w400)),
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
 
-  Widget _signInButton() {
+  Widget _googleButton() {
     return OutlineButton(
         splashColor: Colors.grey,
         onPressed: () {
@@ -194,16 +180,6 @@ class _LoginPageState extends State<LoginPage> {
                 image: AssetImage('assets/logos/google_logo.png'),
                 height: 35.0,
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 10),
-                child: Text(
-                  'Sign in with Google',
-                  style: TextStyle(
-                    fontSize: 25,
-                    color: Colors.grey,
-                  ),
-                ),
-              )
             ],
           ),
         )
@@ -311,9 +287,16 @@ class _LoginPageState extends State<LoginPage> {
                                 fontSize: 14, fontWeight: FontWeight.w500)),
                       ),
                       _divider(),
-                      _facebookButton(),
-                      SizedBox(height: height * .015),
-                      _signInButton(),
+                      Wrap(
+                        direction: Axis.horizontal,
+                        crossAxisAlignment: WrapCrossAlignment.center,
+                        alignment: WrapAlignment.end,
+                        spacing: 8.0,
+                        children: <Widget>[
+                          _facebookButton(),
+                          _googleButton(),
+                        ],
+                      ),
                       SizedBox(height: height * .015),
                       _createAccountLabel(),
                     ],

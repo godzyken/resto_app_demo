@@ -52,5 +52,16 @@
     		</array>
     	</dict>
     </array>
+    <key>FacebookAppID</key>
+    <string>com.googleusercontent.apps.923415811866-go98i4ioeqpnfa8pjgnnqdgtvu1ifquu</string>
+    <key>FacebookDisplayName</key>
+    <string>restoappdemo</string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+      <string>fbapi</string>
+      <string>fb-messenger-share-api</string>
+      <string>fbauth2</string>
+      <string>fbshareextension</string>
+    </array>
 </dict>
 </plist>

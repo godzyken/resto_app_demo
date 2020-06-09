@@ -9,6 +9,7 @@ final GoogleSignIn googleSignIn = GoogleSignIn();
 String name;
 String email;
 String imageUrl;
+String _token;
 
 Future<String> signInWithGoogle() async {
   var googleSignInAccount = await googleSignIn.signIn();
@@ -63,4 +64,45 @@ void signOutGoogle() async {
   await googleSignIn.signOut();
 
   print('user Sign out');
+}
+
+Future<String> signInWithFacebook() async {
+
+  AuthCredential credential = FacebookAuthProvider.getCredential(accessToken: _token);
+
+  final FirebaseUser user = (await _auth.signInWithCredential(credential)).user;
+  if (user != null) {
+    // check is already sign up
+    var result = await Firestore.instance.collection('users').where('id', isEqualTo: user.uid).getDocuments();
+    var documents = result.documents;
+    if(documents.isEmpty) {
+      // Update data to server if new user
+      await Firestore.instance.collection('users').document(user.uid).setData(
+        {'nickname': user.displayName, 'photoUrl': user.photoUrl, 'id': user.uid}
+      );
+    }
+  }
+
+  // Check if email and name is null
+  assert(user.email != null);
+  assert(user.displayName != null);
+  assert(user.photoUrl != null);
+  assert(user.phoneNumber != null);
+
+  name = user.displayName;
+  email = user.email;
+  imageUrl = user.photoUrl;
+
+  // Only taking the first part of the nme, i.e., First Name
+  if (name.contains(' ')) {
+    name = name.substring(0, name.indexOf(' '));
+  }
+
+  assert(!user.isAnonymous);
+  assert(await user.getIdToken() != null);
+
+  final FirebaseUser currentUser = await _auth.currentUser();
+  assert(user.uid == currentUser.uid);
+
+  return 'signInWithFacebook succeeded: $user';
 }
