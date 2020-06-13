@@ -43,7 +43,12 @@ class ShoppingCartPage extends StatelessWidget {
                 Positioned(
                   left: -20,
                   bottom: -20,
-                  child: Image.asset(model.image),
+                  child: StreamBuilder<Product>(
+                    stream: _getImageProduct(),
+                    builder: (context, snapshot) {
+                      return Image.asset(model.image);
+                    }
+                  ),
                 )
               ],
             ),
@@ -83,6 +88,10 @@ class ShoppingCartPage extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  _getImageProduct() async {
+
   }
 
   Widget _price() {

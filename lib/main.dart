@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'file:///C:/Users/isgod/AndroidStudioProjects/resto_app_demo/resto_app_demo/lib/src/pages/welcomePage.dart';
+import 'package:restoappdemo/src/config/route.dart';
+import 'package:restoappdemo/src/pages/main_page.dart';
+import 'package:restoappdemo/src/pages/product_detail.dart';
+import 'package:restoappdemo/src/widget/customRoute.dart';
+//import 'package:restoappdemo/src/pages/welcomePage.dart';
+
 
 void main() {
   runApp(MyApp());
@@ -32,7 +37,18 @@ class MyApp extends StatelessWidget {
         ),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: WelcomePage(),
+//      home: MyHomePage(),
+      routes: Routes.getRoute(),
+      onGenerateRoute: (RouteSettings settings) {
+        if (settings.name.contains('detail')) {
+          return CustomRoute<bool>(
+              builder: (BuildContext context) => ProductDetailPage());
+        } else {
+          return CustomRoute<bool>(
+              builder: (BuildContext context) => MainPage());
+        }
+      },
+      initialRoute: 'MainPage',
     );
   }
 }

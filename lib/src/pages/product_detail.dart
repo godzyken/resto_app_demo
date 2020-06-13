@@ -117,7 +117,7 @@ class _ProductDetailPageState extends State<ProductDetailPage>
             fontSize: 160,
             color: LightColor.lightGrey,
           ),
-          Image.asset('assets/show_1.png')
+          Image.asset('assets/menuassiette/steak_chips.png')
         ],
       ),
     );
@@ -200,7 +200,7 @@ class _ProductDetailPageState extends State<ProductDetailPage>
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      TitleText(text: "NIKE AIR MAX 200", fontSize: 25),
+                      TitleText(text: 'Salade', fontSize: 25),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: <Widget>[

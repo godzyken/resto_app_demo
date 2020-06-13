@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+//import 'package:restoappdemo/main.dart';
+import 'package:restoappdemo/src/pages/home_page.dart';
 import 'file:///C:/Users/isgod/AndroidStudioProjects/resto_app_demo/resto_app_demo/lib/src/pages/signup.dart';
 
-import 'loginPage.dart';
+//import 'loginPage.dart';
 
 class WelcomePage extends StatefulWidget {
   WelcomePage({Key key, this.title}) : super(key: key);
@@ -18,7 +20,7 @@ class _WelcomePageState extends State<WelcomePage> {
     return InkWell(
       onTap: () {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => LoginPage()));
+            context, MaterialPageRoute(builder: (context) => MyHomePage()));
       },
       child: Container(
         width: MediaQuery.of(context).size.width,

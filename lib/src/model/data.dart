@@ -10,7 +10,7 @@ class MenuData {
       price: 2.00,
       isSelected: true,
       isliked: false,
-      image: 'assets/test1.png',
+      image: 'assets/wrap/test1.png',
       category: 'Entree',
     ),
     Product(
@@ -19,7 +19,7 @@ class MenuData {
       price: 5.00,
       isSelected: true,
       isliked: true,
-      image: 'assets/test2.png',
+      image: 'assets/menuassiette/test2.png',
       category: 'Side dish',
     ),
     Product(
@@ -28,7 +28,7 @@ class MenuData {
       price: 19.00,
       isSelected: true,
       isliked: true,
-      image: 'assets/test3.png',
+      image: 'assets/tacos/test3.png',
       category: 'Meat',
     ),
     Product(
@@ -37,7 +37,7 @@ class MenuData {
       price: 4.20,
       isSelected: true,
       isliked: false,
-      image: 'assets/test4.png',
+      image: 'assets/wrap/test1.png',
       category: 'Soda',
     ),
   ];
@@ -45,11 +45,11 @@ class MenuData {
   static List<Product> cartList = [
     Product(
       id: 1,
-      name: 'Salade',
+      name: 'Steack frits',
       price: 2.00,
       isSelected: true,
       isliked: false,
-      image: 'assets/test1.png',
+      image: 'assets/menuassiette/steak_chips.png',
       category: 'Entree',
     ),
     Product(
@@ -58,7 +58,7 @@ class MenuData {
       price: 5.00,
       isSelected: true,
       isliked: true,
-      image: 'assets/test2.png',
+      image: 'assets/menuassiette/test2.png',
       category: 'Side dish',
     ),
     Product(
@@ -67,7 +67,7 @@ class MenuData {
       price: 19.00,
       isSelected: true,
       isliked: true,
-      image: 'assets/test3.png',
+      image: 'assets/tacos/test3.png',
       category: 'Meat',
     ),
     Product(
@@ -76,24 +76,24 @@ class MenuData {
       price: 4.20,
       isSelected: true,
       isliked: false,
-      image: 'assets/test4.png',
+      image: 'assets/wrap/test1.png',
       category: 'Soda',
     ),
   ];
 
   static List<Category> categoryList = [
     Category(),
-    Category(id: 1, name: 'Chips Steaks', image: 'assets/Steak_Chips.png', isSelected: true),
-    Category(id: 2, name: 'TODO', image: 'assets/TODO'),
-    Category(id: 3, name: 'TODO', image: 'assets/TODO'),
-    Category(id: 4, name: 'TODO', image: 'assets/TODO'),
+    Category(id: 1, name: 'Chips Steaks', image: 'assets/menuassiette/steak_chips.png', isSelected: true),
+    Category(id: 2, name: 'Other shiit', image: 'assets/wrap/test1.png', isSelected: true),
+    Category(id: 3, name: 'other shiit again', image: 'assets/menuassiette/test2.png', isSelected: false),
+    Category(id: 4, name: 'Oh fukin shit', image: 'assets/tacos/test3.png', isSelected: true),
   ];
 
   static List<String> showThumbnailList = [
-    'assets/TODO'
-    'assets/TODO'
-    'assets/TODO'
-    'assets/TODO'
+    'assets/menuassiette/steak_chips.png'
+    'assets/wrap/test1.png'
+    'assets/menuassiette/test2.png'
+    'assets/tacos/test3.png'
   ];
 
   static String description = 'Chips on the beef for miam miam sa good bon';
