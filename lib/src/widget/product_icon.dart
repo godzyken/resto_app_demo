@@ -18,7 +18,7 @@ class ProductIcon extends StatelessWidget {
     return model.id == null
         ? Container(width: 5)
         : Container(
-          margin: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+          margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
           child: Container(
             padding: AppTheme.hPadding,
             alignment: Alignment.center,

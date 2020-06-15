@@ -42,7 +42,7 @@ class _MainPageState extends State<MainPage> {
                       spreadRadius: 10),
                 ],
               ),
-              child: Image.asset("assets/user.png"),
+              child: Image.asset("assets/users/user.png", height: 40),
             ),
           ).ripple(() {}, borderRadius: BorderRadius.all(Radius.circular(13)))
         ],

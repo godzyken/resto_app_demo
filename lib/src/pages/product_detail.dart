@@ -117,7 +117,7 @@ class _ProductDetailPageState extends State<ProductDetailPage>
             fontSize: 160,
             color: LightColor.lightGrey,
           ),
-          Image.asset('assets/menuassiette/steak_chips.png')
+          Image.asset('assets/menuassiette/steak_chips.png',)
         ],
       ),
     );
