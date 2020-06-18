@@ -100,6 +100,10 @@ class _ProductDetailPageState extends State<ProductDetailPage>
   }
 
   Widget _productImage() {
+    AssetImage imageProduit = AssetImage('menuassiette/steak_chips.png');
+    Image image = Image(
+      image: imageProduit,
+    );
     return AnimatedBuilder(
       builder: (context, child) {
         return AnimatedOpacity(
@@ -117,7 +121,7 @@ class _ProductDetailPageState extends State<ProductDetailPage>
             fontSize: 160,
             color: LightColor.lightGrey,
           ),
-          Image.asset('assets/menuassiette/steak_chips.png',)
+          image,
         ],
       ),
     );

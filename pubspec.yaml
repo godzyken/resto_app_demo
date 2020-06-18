@@ -60,6 +60,9 @@ flutter:
     - assets/logos/facebook_logo.png
     - assets/menuassiette/steak_chips.png
     - assets/wrap/test1.png
+    - assets/wrap/doner-kebab.png
+    - assets/boisson/boisson.png
+    - assets/dessert/dessert.png
     - assets/menuassiette/test2.png
     - assets/tacos/test3.png
     - assets/users/user.png

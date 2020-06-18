@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:restoappdemo/src/model/product.dart';
 import 'package:restoappdemo/src/pages/home_page.dart';
 import 'package:restoappdemo/src/pages/shopping_cart_page.dart';
 import 'package:restoappdemo/src/themes/light_color.dart';
@@ -20,6 +21,8 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   bool isHomePageSelected = true;
+
+
   Widget _appBar() {
     return Container(
       padding: AppTheme.padding,
@@ -61,7 +64,9 @@ class _MainPageState extends State<MainPage> {
         icon,
         color: color,
       ),
-    ).ripple(() {}, borderRadius: BorderRadius.all(Radius.circular(13)));
+    ).ripple(() {
+
+    }, borderRadius: BorderRadius.all(Radius.circular(13)));
   }
 
   Widget _title() {
